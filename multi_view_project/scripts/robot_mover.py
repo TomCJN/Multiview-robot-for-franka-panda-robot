@@ -131,19 +131,13 @@ class MoveGroupPythonInterface(object):
 
         move_group = self.move_group
 
-        ## Planning to a Joint Goal
-        ## ^^^^^^^^^^^^^^^^^^^^^^^^
-        ## The Panda's zero configuration is at a `singularity <https://www.quora.com/Robotics-What-is-meant-by-kinematic-singularity>`_, so the first
-        ## thing we want to do is move it to a slightly better configuration.
-        ## We use the constant `tau = 2*pi <https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals>`_ for convenience:
-        # We get the joint values from the group and change some of the values:
         joint_goal = move_group.get_current_joint_values()
         joint_goal[0] = 0
-        joint_goal[1] = -tau / 8
+        joint_goal[1] = -5* tau / 18
         joint_goal[2] = 0
-        joint_goal[3] = -3 * tau / 8
+        joint_goal[3] = -44 * tau / 90
         joint_goal[4] = 0
-        joint_goal[5] = tau / 4
+        joint_goal[5] = 25 * tau / 72
         joint_goal[6] = tau / 8
 
         # The go command can be called with joint values, poses, or without any
@@ -162,13 +156,13 @@ class MoveGroupPythonInterface(object):
         move_group = self.move_group
 
         joint_goal = move_group.get_current_joint_values()
-        joint_goal[0] = 0
-        joint_goal[1] = 0
-        joint_goal[2] = - tau / 8
-        joint_goal[3] = -7 * tau / 24
-        joint_goal[4] = tau / 12
-        joint_goal[5] = 5 * tau / 24
-        joint_goal[6] = tau / 8
+        joint_goal[0] = - tau / 12
+        joint_goal[1] = 2 * tau / 18
+        joint_goal[2] = - 2 * tau / 18
+        joint_goal[3] = -tau / 6
+        joint_goal[4] = 7 * tau / 36
+        joint_goal[5] = tau / 6
+        joint_goal[6] = 7 * tau / 24
 
         move_group.go(joint_goal, wait=True)
 
@@ -183,11 +177,11 @@ class MoveGroupPythonInterface(object):
 
         joint_goal = move_group.get_current_joint_values()
         joint_goal[0] = 0
-        joint_goal[1] = 0
+        joint_goal[1] = 7 * tau / 72
         joint_goal[2] = 0
-        joint_goal[3] = - tau / 4
+        joint_goal[3] = - 7 * tau / 72
         joint_goal[4] = 0
-        joint_goal[5] = 7 * tau / 36
+        joint_goal[5] = 5 * tau / 24
         joint_goal[6] = tau / 8
 
         move_group.go(joint_goal, wait=True)
@@ -202,13 +196,13 @@ class MoveGroupPythonInterface(object):
         move_group = self.move_group
 
         joint_goal = move_group.get_current_joint_values()
-        joint_goal[0] = 0
-        joint_goal[1] = 0
-        joint_goal[2] = tau / 8
-        joint_goal[3] = -7 * tau / 24
-        joint_goal[4] = - tau / 12
-        joint_goal[5] = 5 * tau / 24
-        joint_goal[6] = tau / 8
+        joint_goal[0] = tau / 12
+        joint_goal[1] = 2 * tau / 18
+        joint_goal[2] = 2 * tau / 18
+        joint_goal[3] = - tau / 6
+        joint_goal[4] = - 7 * tau / 36
+        joint_goal[5] = tau / 6
+        joint_goal[6] = - tau / 18
 
         move_group.go(joint_goal, wait=True)
 
@@ -233,17 +227,17 @@ def main():
         Robot_Mover.go_to_joint_state_1()
         
         input(
-            "============ Press `Enter` to go to jonit state 2 ..."
+            "============ Press `Enter` to go to joint state 2 ..."
         )
         Robot_Mover.go_to_joint_state_2()
         
         input(
-            "============ Press `Enter` to go to jonit state 3 ..."
+            "============ Press `Enter` to go to joint state 3 ..."
         )
         Robot_Mover.go_to_joint_state_3()
         
         input(
-            "============ Press `Enter` to go to jonit state 4 ..."
+            "============ Press `Enter` to go to joint state 4 ..."
         )
         Robot_Mover.go_to_joint_state_4()
 
