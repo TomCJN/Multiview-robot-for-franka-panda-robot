@@ -1,3 +1,12 @@
 [submodule "Deep_Object_Pose"]
 	path = Deep_Object_Pose
 	url = https://github.com/NVlabs/Deep_Object_Pose.git
+[submodule "franka_ros"]
+	path = franka_ros
+	url = https://github.com/frankaemika/franka_ros.git
+[submodule "gazebo_ros_pkgs]
+	path = gazebo_ros_pkgs
+	url = https://github.com/ros-simulation/gazebo_ros_pkgs.git
+[submodule "panda_moveit_config"]
+	path = panda_moveit_config
+	url https://github.com/moveit/panda_moveit_config.git
