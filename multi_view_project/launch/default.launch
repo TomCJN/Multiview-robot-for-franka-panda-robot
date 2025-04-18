@@ -25,5 +25,5 @@
     <!-- MoveItSimpleControllerManager provides ros_control's JointTrajectory controllers
          as well as GripperCommand actions -->
     <arg name="moveit_controller_manager" value="simple" />
-  </include>
+  </include>zz
 </launch>

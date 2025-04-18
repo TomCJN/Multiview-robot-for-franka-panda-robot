@@ -140,6 +140,8 @@ class MoveGroupPythonInterface(object):
         joint_goal[5] = 25 * tau / 72
         joint_goal[6] = tau / 8
 
+        #joint_goal[6] = -9*tau / 24
+
         # The go command can be called with joint values, poses, or without any
         # parameters if you have already set the pose or joint target for the group
         move_group.go(joint_goal, wait=True)
@@ -157,9 +159,9 @@ class MoveGroupPythonInterface(object):
 
         joint_goal = move_group.get_current_joint_values()
         joint_goal[0] = - tau / 12
-        joint_goal[1] = 2 * tau / 18
-        joint_goal[2] = - 2 * tau / 18
-        joint_goal[3] = -tau / 6
+        joint_goal[1] = 1 * tau / 9
+        joint_goal[2] = - 1 * tau / 9
+        joint_goal[3] = -13 * tau / 72
         joint_goal[4] = 7 * tau / 36
         joint_goal[5] = tau / 6
         joint_goal[6] = 7 * tau / 24
@@ -179,10 +181,10 @@ class MoveGroupPythonInterface(object):
         joint_goal[0] = 0
         joint_goal[1] = 7 * tau / 72
         joint_goal[2] = 0
-        joint_goal[3] = - 7 * tau / 72
+        joint_goal[3] = -1 * tau / 9
         joint_goal[4] = 0
         joint_goal[5] = 5 * tau / 24
-        joint_goal[6] = tau / 8
+        joint_goal[6] = -9*tau / 24
 
         move_group.go(joint_goal, wait=True)
 
